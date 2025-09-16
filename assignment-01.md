@@ -65,7 +65,7 @@ $$
 .  
 .  
 .  
-.  
+.  This function computes the fibonacci sequence recursively.
 .  
 .  
 .  
@@ -95,8 +95,8 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 .  
 .  
 .  
-.  
-.  
+.  Work O(n) every element is checked once
+.  Span O(n) sequential iteration, no parallelism
 .  
 .  
 .  
@@ -110,8 +110,8 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 .  
 .  
 .  
-.  
-.  
+.  work O(n) each element is processed once and combinig results is O(1)
+.  span O(log n) since recursion splits array in half every time
 .  
 .  
 .  
@@ -123,8 +123,8 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
 .  
 .  
-.  
-.  
+.  work O(n) its the same work as sequential
+.  span O(log n) because recursive calls can run in parallel, and only the combine step is sequential
 .  
 .  
 .  
