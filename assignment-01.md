@@ -2,7 +2,7 @@
 
 # CMPS 2200 Assignment 1
 
-**Name:**_________________________
+**Name:**____Dylan Sawransky________________
 
 
 In this assignment, you will learn more about asymptotic notation, parallelism, functional languages, and algorithmic cost models. As in the recitation, some of your answer will go here and some will go in `main.py`. You are welcome to edit this `assignment-01.md` file directly, or print and fill in by hand. If you do the latter, please scan to a file `assignment-01.pdf` and push to your github repository. 
@@ -14,33 +14,33 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
   - 1a. Is $2^{n+1} \in O(2^n)$? Why or why not? 
 .  
 .  
-.  
+.  Yes because adding a constant doesn't change its growth
 .  
 . 
   - 1b. Is $2^{2^n} \in O(2^n)$? Why or why not?     
 .  
 .  
-.  
+.  No because 2^2n which is (2^n)^2 grows a lot faster than 2^n
 .  
 .  
   - 1c. Is $n^{1.01} \in O(\mathrm{log}^2 n)$?    
 .  
 .  
-.  
+.  No n^1.01 grows faster than log n
 .  
 
   - 1d. Is $n^{1.01} \in \Omega(\mathrm{log}^2 n)$?  
 .  
-.  
+    Yes because n^1.01 grows faster than log n which means it is omega(log n)
 .  
 .  
   - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?  
 .  
 .  
-.  
+.  No because n grows faster than (log n)^3
 .  
   - 1f. Is $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$?  
-.  
+.  Yes because n is asymptotically larger than (log n)^3
 
 
 2. **SPARC to Python** (12 pts)
