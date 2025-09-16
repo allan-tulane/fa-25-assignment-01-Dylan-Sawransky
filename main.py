@@ -6,11 +6,24 @@ See assignment-01.pdf for details.
 
 def foo(x):
     ### TODO
-    pass
+    if x == 0:
+        return 0
+    elif x == 1:
+        return 1
+    else:
+        return foo(x - 1) + foo(x - 2)
 
 def longest_run(mylist, key):
     ### TODO
-    pass
+    max_run = 0
+    current_run = 0
+    for v in mylist:
+        if v == key:
+            current_run += 1
+            max_run = max(max_run, current_run)
+        else:
+            current_run = 0
+    return max_run
 
 
 class Result:
@@ -38,7 +51,38 @@ def to_value(v):
         
 def longest_run_recursive(mylist, key):
     ### TODO
-    pass
+    n = len(mylist)
+    if n == 0:
+        return Result(0, 0, 0, True)
+    if n == 1:
+        if mylist[0] == key:
+            return Result(1, 1, 1, True)
+        else:
+            return Result(0, 0, 0, False)
 
+    mid = n // 2
+    left = longest_run_recursive(mylist[:mid], key)
+    right = longest_run_recursive(mylist[mid:], key)
 
+    
+    if left.is_entire_range and right.is_entire_range:
+       
+        return Result(n, n, n, True)
 
+    
+    if left.is_entire_range:
+        left_size = left.left_size + right.left_size
+    else:
+        left_size = left.left_size
+
+    
+    if right.is_entire_range:
+        right_size = right.right_size + left.right_size
+    else:
+        right_size = right.right_size
+
+    
+    cross = left.right_size + right.left_size
+    longest_size = max(left.longest_size, right.longest_size, cross)
+
+    return Result(left_size, right_size, longest_size, False)
